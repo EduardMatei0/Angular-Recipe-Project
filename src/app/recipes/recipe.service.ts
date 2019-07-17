@@ -30,6 +30,11 @@ export class RecipeService {
                     [ new Ingredient('Eggs', 12), new Ingredient('Slices of Bacon', 4), new Ingredient('Cheddar Cheese', 2)]),
       ];
 
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
     getRecipes() {
         return this.recipes.slice();
     }
